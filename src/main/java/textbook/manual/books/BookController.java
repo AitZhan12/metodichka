@@ -14,7 +14,7 @@ import java.util.List;
 
 import java.util.stream.Collectors;
 
-@CrossOrigin("http://localhost:4200")
+//@CrossOrigin("http://ng-code.s3-website.us-east-2.amazonaws.com/")
 @RestController
 @RequestMapping("/file")
 public class BookController {
@@ -71,7 +71,7 @@ public class BookController {
         return book.delete(id);
     }
 
-    @CrossOrigin("http://localhost:4200")
+//    @CrossOrigin("http://localhost:4200")
     @GetMapping("/download/{categoryID}/{topicID}")
     public ResponseEntity<byte[]> getFile(@PathVariable(value = "categoryID") int categoryID,
                                           @PathVariable(value = "topicID") int topicID) {

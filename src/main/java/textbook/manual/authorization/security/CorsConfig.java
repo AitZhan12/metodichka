@@ -17,7 +17,7 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:4200");
+        config.addAllowedOriginPattern("http://localhost:4200");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 
@@ -33,7 +33,10 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/**")
+                        .allowedMethods("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
+                        .allowedOrigins("Access-Control-Allow-Origin", "http://ng-code.s3-website.us-east-2.amazonaws.com/")
+                        .allowedHeaders("*");
             }
         };
     }
