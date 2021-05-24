@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 @Repository
 public interface BooksRepository extends JpaRepository<Books, Long> {
 
-    @Query(value = "SELECT * from books where categoryid =?1 and topicid = ?2 and type like '%pdf%'", nativeQuery = true)
+    @Query(value = "SELECT * from books where categoryid =?1 and topicid = ?2 and type like '%application/vnd.openxmlformats-officedocument.wordprocessingml.document%'", nativeQuery = true)
     Books downLoad(int categoryID, int topicId);
 
     @Query(value = "SELECT * from books where categoryid =?1 and topicid = ?2 and type like '%pptx%'", nativeQuery = true)
