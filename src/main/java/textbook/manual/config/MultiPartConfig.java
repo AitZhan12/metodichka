@@ -19,8 +19,8 @@ public class MultiPartConfig {
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
 
-        factory.setMaxFileSize(DataSize.parse("10MB"));
-        factory.setMaxRequestSize(DataSize.parse("10MB"));
+        factory.setMaxFileSize(DataSize.parse("100MB"));
+        factory.setMaxRequestSize(DataSize.parse("100MB"));
 
         return factory.createMultipartConfig();
     }
